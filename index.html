@@ -1,15 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="FitFamilyHub — modern BMI calculator, health tools, wellness quiz and BMI history.">
-<meta name="theme-color" content="#635bff">
+<meta name="description" content="FitFamilyHub — modern BMI calculator for adults, children and teens, BMI history, health quizzes and healthy living information.">
+<meta name="theme-color" content="#6366f1">
 
 <title>FitFamilyHub — BMI & Health Hub</title>
 
 <style>
+/* =========================================================
+   FITFAMILYHUB — PROFESSIONAL UI
+   Single-file GitHub Pages version
+========================================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap');
 
 :root{
@@ -30,9 +36,9 @@
     --muted:#667085;
     --border:#e4e7ec;
 
-    --shadow-sm:0 5px 18px rgba(15,23,42,.06);
+    --shadow-sm:0 4px 16px rgba(15,23,42,.06);
     --shadow:0 16px 50px rgba(15,23,42,.09);
-    --shadow-lg:0 25px 70px rgba(79,70,229,.18);
+    --shadow-lg:0 25px 70px rgba(79,70,229,.15);
 
     --radius:22px;
     --radius-sm:14px;
@@ -48,9 +54,9 @@ body.dark{
     --muted:#9ca3af;
     --border:#303039;
 
-    --shadow-sm:0 4px 20px rgba(0,0,0,.25);
-    --shadow:0 18px 55px rgba(0,0,0,.38);
-    --shadow-lg:0 25px 70px rgba(0,0,0,.45);
+    --shadow-sm:0 4px 20px rgba(0,0,0,.2);
+    --shadow:0 18px 55px rgba(0,0,0,.35);
+    --shadow-lg:0 25px 70px rgba(0,0,0,.4);
 }
 
 *{
@@ -69,7 +75,9 @@ body{
     color:var(--text);
     background:var(--bg);
     line-height:1.6;
-    transition:background .3s ease,color .3s ease;
+    transition:
+        background .3s ease,
+        color .3s ease;
 }
 
 button,
@@ -100,19 +108,19 @@ a{
     margin:auto;
 }
 
-/* ================= HEADER ================= */
+/* ================= NAV ================= */
 
 .header{
     position:sticky;
     top:0;
     z-index:1000;
     border-bottom:1px solid var(--border);
-    background:rgba(255,255,255,.84);
+    background:rgba(255,255,255,.82);
     backdrop-filter:blur(18px);
 }
 
 body.dark .header{
-    background:rgba(9,9,11,.88);
+    background:rgba(9,9,11,.84);
 }
 
 .nav{
@@ -151,7 +159,7 @@ body.dark .header{
 .nav-links{
     display:flex;
     align-items:center;
-    gap:25px;
+    gap:27px;
     list-style:none;
 }
 
@@ -196,42 +204,28 @@ body.dark .header{
 .hero{
     position:relative;
     overflow:hidden;
-    padding:88px 0 92px;
+    padding:82px 0 90px;
     color:white;
     background:
-        radial-gradient(circle at 10% 20%,rgba(255,255,255,.18),transparent 25%),
-        radial-gradient(circle at 90% 80%,rgba(6,182,212,.22),transparent 30%),
-        linear-gradient(135deg,#4338ca,#6d28d9 52%,#7c3aed);
-}
-
-.hero:before,
-.hero:after{
-    content:"";
-    position:absolute;
-    border-radius:50%;
-    pointer-events:none;
+        radial-gradient(circle at 15% 25%,rgba(255,255,255,.16),transparent 24%),
+        radial-gradient(circle at 85% 75%,rgba(6,182,212,.18),transparent 28%),
+        linear-gradient(135deg,#4338ca,#6d28d9 55%,#7c3aed);
 }
 
 .hero:before{
-    width:500px;
-    height:500px;
-    right:-220px;
-    top:-250px;
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    right:-180px;
+    top:-220px;
+    border-radius:50%;
     background:rgba(255,255,255,.08);
-}
-
-.hero:after{
-    width:320px;
-    height:320px;
-    left:-180px;
-    bottom:-180px;
-    background:rgba(6,182,212,.10);
 }
 
 .hero-content{
     position:relative;
-    z-index:2;
-    max-width:900px;
+    max-width:880px;
     text-align:center;
     margin:auto;
 }
@@ -240,7 +234,7 @@ body.dark .header{
     display:inline-flex;
     align-items:center;
     gap:8px;
-    padding:8px 14px;
+    padding:8px 13px;
     margin-bottom:20px;
     border:1px solid rgba(255,255,255,.22);
     border-radius:100px;
@@ -251,12 +245,12 @@ body.dark .header{
 }
 
 .hero h1{
-    max-width:900px;
+    max-width:850px;
     margin:auto;
     font-family:"Manrope",sans-serif;
-    font-size:clamp(42px,7vw,74px);
+    font-size:clamp(40px,7vw,72px);
     line-height:1.02;
-    letter-spacing:-3px;
+    letter-spacing:-2.5px;
 }
 
 .hero h1 span{
@@ -264,8 +258,8 @@ body.dark .header{
 }
 
 .hero p{
-    max-width:710px;
-    margin:23px auto 0;
+    max-width:700px;
+    margin:22px auto 0;
     color:rgba(255,255,255,.86);
     font-size:16px;
     line-height:1.8;
@@ -288,13 +282,13 @@ body.dark .header{
 }
 
 .btn:hover{
-    transform:translateY(-3px);
+    transform:translateY(-2px);
 }
 
 .btn-primary{
     color:#4f46e5;
     background:white;
-    box-shadow:0 10px 25px rgba(0,0,0,.14);
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
 }
 
 .btn-ghost{
@@ -303,12 +297,12 @@ body.dark .header{
     background:rgba(255,255,255,.1);
 }
 
-/* ================= HERO STATS ================= */
+/* ================= STATS ================= */
 
 .hero-stats{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    max-width:720px;
+    max-width:700px;
     margin:50px auto 0;
     padding:20px;
     border:1px solid rgba(255,255,255,.14);
@@ -340,11 +334,11 @@ body.dark .header{
 /* ================= MAIN ================= */
 
 main{
-    padding:38px 0 70px;
+    padding:36px 0 70px;
 }
 
 .section{
-    margin-top:30px;
+    margin-top:28px;
 }
 
 .card{
@@ -411,7 +405,7 @@ main{
     white-space:nowrap;
 }
 
-/* ================= MODE ================= */
+/* calculator mode */
 
 .mode-switch{
     display:grid;
@@ -439,7 +433,7 @@ main{
     box-shadow:0 6px 15px rgba(99,91,255,.25);
 }
 
-/* ================= UNITS ================= */
+/* unit switch */
 
 .unit-switch{
     display:flex;
@@ -465,8 +459,6 @@ main{
     color:white;
     background:var(--primary);
 }
-
-/* ================= FORM ================= */
 
 .form-grid{
     display:grid;
@@ -525,7 +517,7 @@ main{
 }
 
 .form-note{
-    margin-top:8px;
+    margin-top:7px;
     color:var(--muted);
     font-size:10px;
 }
@@ -545,11 +537,6 @@ main{
     background:linear-gradient(135deg,var(--primary),var(--secondary));
     font-weight:900;
     box-shadow:0 10px 25px rgba(99,91,255,.22);
-    transition:.2s;
-}
-
-.calculate-btn:hover{
-    transform:translateY(-2px);
 }
 
 .reset-btn{
@@ -653,7 +640,7 @@ main{
     background:#ede9fe;
 }
 
-/* ================= GAUGE ================= */
+/* gauge */
 
 .scale{
     margin:27px 0 12px;
@@ -668,23 +655,10 @@ main{
     overflow:visible;
 }
 
-.scale-bar span:nth-child(1){
-    background:#3b82f6;
-    border-radius:100px 0 0 100px;
-}
-
-.scale-bar span:nth-child(2){
-    background:#10b981;
-}
-
-.scale-bar span:nth-child(3){
-    background:#f59e0b;
-}
-
-.scale-bar span:nth-child(4){
-    background:#ef4444;
-    border-radius:0 100px 100px 0;
-}
+.scale-bar span:nth-child(1){background:#3b82f6;border-radius:100px 0 0 100px}
+.scale-bar span:nth-child(2){background:#10b981}
+.scale-bar span:nth-child(3){background:#f59e0b}
+.scale-bar span:nth-child(4){background:#ef4444;border-radius:0 100px 100px 0}
 
 .marker{
     position:absolute;
@@ -822,12 +796,6 @@ body.dark .marker{
     border:1px solid var(--border);
     border-radius:16px;
     background:var(--soft);
-    transition:.2s;
-}
-
-.metric-card:hover{
-    transform:translateY(-3px);
-    border-color:rgba(99,91,255,.3);
 }
 
 .metric-card span{
@@ -939,19 +907,8 @@ canvas{
     transition:.25s;
 }
 
-.health-card:before{
-    content:"";
-    position:absolute;
-    width:100px;
-    height:100px;
-    right:-45px;
-    top:-45px;
-    border-radius:50%;
-    background:rgba(99,91,255,.06);
-}
-
 .health-card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-4px);
     box-shadow:var(--shadow);
 }
 
@@ -980,48 +937,6 @@ canvas{
 .tip{
     margin-top:15px;
     color:var(--primary);
-    font-size:11px;
-    font-weight:800;
-}
-
-/* ================= NEW WELLNESS STRIP ================= */
-
-.wellness-strip{
-    position:relative;
-    overflow:hidden;
-    padding:28px;
-    border-radius:22px;
-    color:white;
-    background:
-        radial-gradient(circle at 90% 20%,rgba(255,255,255,.15),transparent 25%),
-        linear-gradient(135deg,#0f766e,#0891b2);
-    box-shadow:var(--shadow);
-}
-
-.wellness-strip h2{
-    font-family:"Manrope",sans-serif;
-    font-size:25px;
-}
-
-.wellness-strip p{
-    max-width:700px;
-    margin-top:7px;
-    color:rgba(255,255,255,.82);
-    font-size:13px;
-}
-
-.wellness-pills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    margin-top:18px;
-}
-
-.wellness-pill{
-    padding:8px 12px;
-    border:1px solid rgba(255,255,255,.2);
-    border-radius:100px;
-    background:rgba(255,255,255,.1);
     font-size:11px;
     font-weight:800;
 }
@@ -1265,19 +1180,6 @@ canvas{
     color:white;
 }
 
-.developer{
-    margin-top:24px;
-    padding-top:20px;
-    border-top:1px solid #344054;
-    color:#d0d5dd;
-    text-align:center;
-    font-size:13px;
-}
-
-.developer strong{
-    color:white;
-}
-
 .footer-bottom{
     padding:18px 0;
     border-top:1px solid #344054;
@@ -1308,34 +1210,6 @@ canvas{
 .toast.show{
     opacity:1;
     transform:translate(-50%,0);
-}
-
-/* ================= BACK TO TOP ================= */
-
-.top-btn{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    z-index:2000;
-    width:45px;
-    height:45px;
-    display:grid;
-    place-items:center;
-    border:none;
-    border-radius:50%;
-    color:white;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    box-shadow:0 10px 25px rgba(99,91,255,.3);
-    opacity:0;
-    visibility:hidden;
-    transform:translateY(10px);
-    transition:.3s;
-}
-
-.top-btn.show{
-    opacity:1;
-    visibility:visible;
-    transform:none;
 }
 
 /* ================= MOBILE ================= */
@@ -1448,11 +1322,6 @@ canvas{
     .hero-actions .btn{
         width:100%;
     }
-
-    .history-header{
-        align-items:flex-start;
-        flex-direction:column;
-    }
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -1466,6 +1335,7 @@ canvas{
     }
 }
 </style>
+
 </head>
 
 <body>
@@ -1473,82 +1343,87 @@ canvas{
 <!-- ================= HEADER ================= -->
 
 <header class="header">
-    <div class="container nav">
+<div class="container nav">
 
-        <a class="logo" href="#home" aria-label="FitFamilyHub home">
-            <span class="logo-mark">✚</span>
-            <span class="logo-text">FitFamilyHub</span>
-        </a>
+<a class="logo" href="#home" aria-label="FitFamilyHub home">
+    <span class="logo-mark">✚</span>
+    <span class="logo-text">FitFamilyHub</span>
+</a>
 
-        <nav>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#calculator">BMI</a></li>
-                <li><a href="#history">History</a></li>
-                <li><a href="#health">Health Hub</a></li>
-                <li><a href="#quiz">Quiz</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
+<nav>
+<ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#calculator">BMI</a></li>
+    <li><a href="#history">History</a></li>
+    <li><a href="#health">Health Hub</a></li>
+    <li><a href="#quiz">Quiz</a></li>
+    <li><a href="#faq">FAQ</a></li>
+</ul>
+</nav>
 
-        <div class="nav-actions">
-            <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
-            <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
-        </div>
+<div class="nav-actions">
+<button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
+<button class="icon-btn menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+</div>
 
-    </div>
+</div>
 </header>
 
 <!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
-    <div class="container hero-content">
 
-        <div class="eyebrow">
-            ✨ Smart health tools for everyday life
-        </div>
+<div class="container hero-content">
 
-        <h1>
-            Understand your health<br>
-            <span>one step at a time.</span>
-        </h1>
+<div class="eyebrow">
+    ✨ Smart health tools for everyday life
+</div>
 
-        <p>
-            Calculate BMI, understand your result, explore healthy habits,
-            test your knowledge and keep your personal history safely
-            inside your browser.
-        </p>
+<h1>
+    Understand your health<br>
+    <span>one step at a time.</span>
+</h1>
 
-        <div class="hero-actions">
-            <a class="btn btn-primary" href="#calculator">
-                Calculate BMI →
-            </a>
+<p>
+    Calculate BMI, understand your result, explore healthy habits,
+    test your knowledge and keep your personal history safely
+    inside your browser.
+</p>
 
-            <a class="btn btn-ghost" href="#quiz">
-                Take a Health Quiz
-            </a>
-        </div>
+<div class="hero-actions">
+    <a class="btn btn-primary" href="#calculator">
+        Calculate BMI →
+    </a>
 
-        <div class="hero-stats">
+```
+<a class="btn btn-ghost" href="#quiz">
+    Take a Health Quiz
+</a>
+```
 
-            <div class="hero-stat">
-                <strong>2+</strong>
-                <span>Age groups supported</span>
-            </div>
+</div>
 
-            <div class="hero-stat">
-                <strong>100%</strong>
-                <span>Browser-based</span>
-            </div>
-
-            <div class="hero-stat">
-                <strong>Free</strong>
-                <span>No account required</span>
-            </div>
-
-        </div>
-
+<div class="hero-stats">
+    <div class="hero-stat">
+        <strong>2+</strong>
+        <span>Age groups supported</span>
     </div>
+
+```
+<div class="hero-stat">
+    <strong>100%</strong>
+    <span>Browser-based</span>
+</div>
+
+<div class="hero-stat">
+    <strong>Free</strong>
+    <span>No account required</span>
+</div>
+```
+
+</div>
+
+</div>
 </section>
 
 <main>
@@ -1558,245 +1433,250 @@ canvas{
 
 <section class="section" id="calculator">
 
-    <div class="section-heading">
-        <h2>Personal BMI Calculator</h2>
-        <p>Choose the appropriate calculator for your age.</p>
-    </div>
+<div class="section-heading">
+    <h2>Personal BMI Calculator</h2>
+    <p>Choose the appropriate calculator for your age.</p>
+</div>
 
-    <div class="calculator-layout">
+<div class="calculator-layout">
 
-        <div class="card calculator-card">
+<div class="card calculator-card">
 
-            <div class="calculator-head">
-                <div>
-                    <h2 id="calculatorTitle">Calculate your BMI</h2>
-                    <p id="calculatorSubtitle">For adults aged 20 and above.</p>
-                </div>
+<div class="calculator-head">
+<div>
+    <h2 id="calculatorTitle">Calculate your BMI</h2>
+    <p id="calculatorSubtitle">For adults aged 20 and above.</p>
+</div>
 
-                <span class="badge">FREE TOOL</span>
-            </div>
+<span class="badge">FREE TOOL</span>
 
-            <div class="mode-switch" role="tablist">
+</div>
 
-                <button class="mode-btn active" id="adultMode" type="button">
-                    👤 Adult · 20+
-                </button>
+<!-- mode -->
 
-                <button class="mode-btn" id="childMode" type="button">
-                    🧒 Child / Teen · 2–19
-                </button>
+<div class="mode-switch" role="tablist" aria-label="BMI calculator type">
 
-            </div>
+<button
+ class="mode-btn active"
+ id="adultMode"
+ type="button">
+👤 Adult · 20+ </button>
 
-            <div class="unit-switch">
+<button
+ class="mode-btn"
+ id="childMode"
+ type="button">
+🧒 Child / Teen · 2–19 </button>
 
-                <button class="active" id="metricBtn" type="button">
-                    Metric
-                </button>
+</div>
 
-                <button id="imperialBtn" type="button">
-                    Imperial
-                </button>
+<!-- units -->
 
-            </div>
+<div class="unit-switch">
 
-            <div class="form-grid">
+<button class="active" id="metricBtn" type="button">
+    Metric
+</button>
 
-                <div class="field">
-                    <label for="age">Age</label>
+<button id="imperialBtn" type="button">
+    Imperial
+</button>
 
-                    <div class="input-wrap">
-                        <input
-                            id="age"
-                            type="number"
-                            min="20"
-                            max="120"
-                            step="1"
-                            placeholder="e.g. 25"
-                        >
-                        <span class="input-unit">years</span>
-                    </div>
-                </div>
+</div>
 
-                <div class="field">
-                    <label for="sex">Sex</label>
+<div class="form-grid">
 
-                    <div class="input-wrap">
-                        <select id="sex">
-                            <option value="">Select</option>
-                            <option value="male">Male / Boy</option>
-                            <option value="female">Female / Girl</option>
-                        </select>
-                    </div>
-                </div>
+<div class="field">
+<label for="age">Age</label>
 
-                <div class="field">
-                    <label for="height">Height</label>
+<div class="input-wrap">
+<input
+    id="age"
+    type="number"
+    min="2"
+    max="120"
+    step="1"
+    placeholder="e.g. 25">
+<span class="input-unit">years</span>
+</div>
+</div>
 
-                    <div class="input-wrap">
-                        <input
-                            id="height"
-                            type="number"
-                            min="1"
-                            step="0.1"
-                            placeholder="Enter height"
-                        >
-                        <span class="input-unit" id="heightUnit">cm</span>
-                    </div>
-                </div>
+<div class="field">
+<label for="sex">Sex</label>
 
-                <div class="field">
-                    <label for="weight">Weight</label>
+<div class="input-wrap">
+<select id="sex">
+    <option value="">Select</option>
+    <option value="male">Male / Boy</option>
+    <option value="female">Female / Girl</option>
+</select>
+</div>
+</div>
 
-                    <div class="input-wrap">
-                        <input
-                            id="weight"
-                            type="number"
-                            min="1"
-                            step="0.1"
-                            placeholder="Enter weight"
-                        >
-                        <span class="input-unit" id="weightUnit">kg</span>
-                    </div>
-                </div>
+<div class="field">
+<label for="height">Height</label>
 
-            </div>
+<div class="input-wrap">
+<input
+    id="height"
+    type="number"
+    min="1"
+    step="0.1"
+    placeholder="Enter height">
+<span class="input-unit" id="heightUnit">cm</span>
+</div>
+</div>
 
-            <div class="form-note" id="ageNote">
-                Adult BMI categories are intended for people aged 20+.
-            </div>
+<div class="field">
+<label for="weight">Weight</label>
 
-            <div class="calculate-actions">
+<div class="input-wrap">
+<input
+    id="weight"
+    type="number"
+    min="1"
+    step="0.1"
+    placeholder="Enter weight">
+<span class="input-unit" id="weightUnit">kg</span>
+</div>
+</div>
 
-                <button class="calculate-btn" id="calculateBtn">
-                    Calculate BMI
-                </button>
+</div>
 
-                <button class="reset-btn" id="resetBtn">
-                    Reset
-                </button>
+<div class="form-note" id="ageNote">
+    Adult BMI categories are intended for people aged 20+.
+</div>
 
-            </div>
+<div class="calculate-actions">
 
-            <div class="error" id="error" role="alert"></div>
+<button class="calculate-btn" id="calculateBtn">
+    Calculate BMI
+</button>
 
-            <!-- RESULT -->
+<button class="reset-btn" id="resetBtn">
+    Reset
+</button>
 
-            <section class="result" id="result" aria-live="polite">
+</div>
 
-                <div class="result-kicker">Your BMI</div>
+<div class="error" id="error" role="alert"></div>
 
-                <div class="bmi-number" id="bmiValue">--</div>
+<!-- RESULT -->
 
-                <div class="category" id="category">--</div>
+<section class="result" id="result" aria-live="polite">
 
-                <div class="scale" id="adultScale">
+<div class="result-kicker">Your BMI</div>
 
-                    <div class="scale-bar">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <div class="marker" id="marker"></div>
-                    </div>
+<div class="bmi-number" id="bmiValue">--</div>
 
-                    <div class="scale-labels">
-                        <span>Under</span>
-                        <span>Healthy</span>
-                        <span>Over</span>
-                        <span>Obesity</span>
-                    </div>
+<div class="category" id="category">--</div>
 
-                </div>
+<div class="scale" id="adultScale">
 
-                <div class="range-card" id="healthyRange">
-                    <strong>Estimated adult healthy-weight range</strong>
-                    <span id="healthyWeight">--</span>
-                </div>
+<div class="scale-bar">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <div class="marker" id="marker"></div>
+</div>
 
-                <p class="result-description" id="resultDescription"></p>
+<div class="scale-labels">
+    <span>Under</span>
+    <span>Healthy</span>
+    <span>Over</span>
+    <span>Obesity</span>
+</div>
 
-                <div class="child-notice" id="childNotice"></div>
+</div>
 
-            </section>
+<div class="range-card" id="healthyRange">
+<strong>Estimated adult healthy-weight range</strong>
+<span id="healthyWeight">--</span>
+</div>
 
-        </div>
+<p class="result-description" id="resultDescription"></p>
 
-        <!-- SIDE CARD -->
+<div class="child-notice" id="childNotice"></div>
 
-        <aside class="card side-card">
+</section>
 
-            <div class="side-icon">♥</div>
+</div>
 
-            <h3>More than a number</h3>
+<!-- SIDE -->
 
-            <p>
-                BMI is a screening measure. It can be useful as
-                one part of a broader picture of health.
-            </p>
+<aside class="card side-card">
 
-            <ul class="feature-list">
+<div class="side-icon">♥</div>
 
-                <li>
-                    <span class="check">✓</span>
-                    <span>Simple adult BMI categories</span>
-                </li>
+<h3>More than a number</h3>
 
-                <li>
-                    <span class="check">✓</span>
-                    <span>Separate child and teen mode</span>
-                </li>
+<p>
+BMI is a screening measure. It can be useful as
+one part of a broader picture of health.
+</p>
 
-                <li>
-                    <span class="check">✓</span>
-                    <span>Healthy-weight information</span>
-                </li>
+<ul class="feature-list">
 
-                <li>
-                    <span class="check">✓</span>
-                    <span>Local browser history</span>
-                </li>
+<li>
+<span class="check">✓</span>
+<span>Simple adult BMI categories</span>
+</li>
 
-                <li>
-                    <span class="check">✓</span>
-                    <span>No account required</span>
-                </li>
+<li>
+<span class="check">✓</span>
+<span>Separate child and teen mode</span>
+</li>
 
-            </ul>
+<li>
+<span class="check">✓</span>
+<span>Healthy-weight information</span>
+</li>
 
-        </aside>
+<li>
+<span class="check">✓</span>
+<span>Local browser history</span>
+</li>
 
-    </div>
+<li>
+<span class="check">✓</span>
+<span>No account required</span>
+</li>
 
+</ul>
+
+</aside>
+
+</div>
 </section>
 
 <!-- ================= DASHBOARD ================= -->
 
 <section class="section card dashboard" id="dashboard">
 
-    <div class="section-heading">
-        <h2>Health Snapshot</h2>
-        <p>A quick overview of your latest saved BMI data.</p>
-    </div>
+<div class="section-heading">
+<h2>Health Snapshot</h2>
+<p>A quick overview of your latest saved BMI data.</p>
+</div>
 
-    <div class="dashboard-grid">
+<div class="dashboard-grid">
 
-        <div class="metric-card">
-            <span>Latest BMI</span>
-            <strong id="latestBMI">—</strong>
-        </div>
+<div class="metric-card">
+<span>Latest BMI</span>
+<strong id="latestBMI">—</strong>
+</div>
 
-        <div class="metric-card">
-            <span>Latest category</span>
-            <strong id="latestCategory">—</strong>
-        </div>
+<div class="metric-card">
+<span>Latest category</span>
+<strong id="latestCategory">—</strong>
+</div>
 
-        <div class="metric-card">
-            <span>Saved checks</span>
-            <strong id="historyCount">0</strong>
-        </div>
+<div class="metric-card">
+<span>Saved checks</span>
+<strong id="historyCount">0</strong>
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -1804,50 +1684,50 @@ canvas{
 
 <section class="section card dashboard" id="history">
 
-    <div class="history-header">
+<div class="history-header">
 
-        <div class="section-heading" style="margin-bottom:0">
-            <h2>BMI History</h2>
-            <p>Your latest calculations are stored locally in this browser.</p>
-        </div>
+<div class="section-heading" style="margin-bottom:0">
+<h2>BMI History</h2>
+<p>Your latest calculations are stored locally in this browser.</p>
+</div>
 
-        <button class="clear-btn" id="clearHistory">
-            Clear History
-        </button>
+<button class="clear-btn" id="clearHistory">
+Clear History
+</button>
 
-    </div>
+</div>
 
-    <div class="empty" id="emptyHistory">
-        No BMI calculations saved yet.
-    </div>
+<div class="empty" id="emptyHistory">
+No BMI calculations saved yet.
+</div>
 
-    <div class="table-wrap" id="historyTable" style="display:none">
+<div class="table-wrap" id="historyTable" style="display:none">
 
-        <table class="history-table">
+<table class="history-table">
 
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Age</th>
-                    <th>Sex</th>
-                    <th>BMI</th>
-                    <th>Category</th>
-                </tr>
-            </thead>
+<thead>
+<tr>
+<th>Date</th>
+<th>Age</th>
+<th>Sex</th>
+<th>BMI</th>
+<th>Category</th>
+</tr>
+</thead>
 
-            <tbody id="historyBody"></tbody>
+<tbody id="historyBody"></tbody>
 
-        </table>
+</table>
 
-    </div>
+</div>
 
-    <div class="chart" id="chartBox" style="display:none">
+<div class="chart" id="chartBox" style="display:none">
 
-        <h3>Adult BMI Trend</h3>
+<h3>Adult BMI Trend</h3>
 
-        <canvas id="bmiChart" height="240"></canvas>
+<canvas id="bmiChart" height="240"></canvas>
 
-    </div>
+</div>
 
 </section>
 
@@ -1855,156 +1735,130 @@ canvas{
 
 <section class="section" id="health">
 
-    <div class="section-heading">
-        <h2>Health Hub</h2>
-        <p>Small habits can build a healthier routine over time.</p>
-    </div>
+<div class="section-heading">
+<h2>Health Hub</h2>
+<p>Small habits can build a healthier routine over time.</p>
+</div>
 
-    <div class="health-grid">
+<div class="health-grid">
 
-        <article class="health-card">
-            <div class="health-card-icon">🥗</div>
-            <h3>Balanced Nutrition</h3>
-            <p>
-                Aim for a variety of vegetables, fruits, whole grains,
-                protein foods and other nutrient-rich choices.
-            </p>
-            <div class="tip">TIP · Variety matters</div>
-        </article>
+<article class="health-card">
+<div class="health-card-icon">🥗</div>
+<h3>Balanced Nutrition</h3>
+<p>
+Aim for a variety of vegetables, fruits, whole grains,
+protein foods and other nutrient-rich choices.
+</p>
+<div class="tip">TIP · Variety matters</div>
+</article>
 
-        <article class="health-card">
-            <div class="health-card-icon">🚶</div>
-            <h3>Move Regularly</h3>
-            <p>
-                Regular physical activity can support cardiovascular
-                health, strength, mood and everyday function.
-            </p>
-            <div class="tip">TIP · Start small</div>
-        </article>
+<article class="health-card">
+<div class="health-card-icon">🚶</div>
+<h3>Move Regularly</h3>
+<p>
+Regular physical activity can support cardiovascular
+health, strength, mood and everyday function.
+</p>
+<div class="tip">TIP · Start small</div>
+</article>
 
-        <article class="health-card">
-            <div class="health-card-icon">💧</div>
-            <h3>Stay Hydrated</h3>
-            <p>
-                Water needs vary between people and situations.
-                Pay attention to thirst and your environment.
-            </p>
-            <div class="tip">TIP · Keep water nearby</div>
-        </article>
+<article class="health-card">
+<div class="health-card-icon">💧</div>
+<h3>Stay Hydrated</h3>
+<p>
+Water needs vary between people and situations.
+Pay attention to thirst and your environment.
+</p>
+<div class="tip">TIP · Keep water nearby</div>
+</article>
 
-        <article class="health-card">
-            <div class="health-card-icon">😴</div>
-            <h3>Prioritize Sleep</h3>
-            <p>
-                Consistent sleep routines can support concentration,
-                mood and overall wellbeing.
-            </p>
-            <div class="tip">TIP · Keep a regular schedule</div>
-        </article>
+<article class="health-card">
+<div class="health-card-icon">😴</div>
+<h3>Prioritize Sleep</h3>
+<p>
+Consistent sleep routines can support concentration,
+mood and overall wellbeing.
+</p>
+<div class="tip">TIP · Keep a regular schedule</div>
+</article>
 
-        <article class="health-card">
-            <div class="health-card-icon">🧠</div>
-            <h3>Mental Wellbeing</h3>
-            <p>
-                Relaxation, social connection and healthy routines
-                can all contribute to wellbeing.
-            </p>
-            <div class="tip">TIP · Take regular breaks</div>
-        </article>
+<article class="health-card">
+<div class="health-card-icon">🧠</div>
+<h3>Mental Wellbeing</h3>
+<p>
+Relaxation, social connection and healthy routines
+can all contribute to wellbeing.
+</p>
+<div class="tip">TIP · Take regular breaks</div>
+</article>
 
-        <article class="health-card">
-            <div class="health-card-icon">📅</div>
-            <h3>Build Consistency</h3>
-            <p>
-                Healthy routines are usually easier to maintain when
-                goals are realistic and sustainable.
-            </p>
-            <div class="tip">TIP · Focus on progress</div>
-        </article>
+<article class="health-card">
+<div class="health-card-icon">📅</div>
+<h3>Build Consistency</h3>
+<p>
+Healthy routines are usually easier to maintain when
+goals are realistic and sustainable.
+</p>
+<div class="tip">TIP · Focus on progress</div>
+</article>
 
-    </div>
-
-</section>
-
-<!-- ================= NEW WELLNESS SECTION ================= -->
-
-<section class="section">
-
-    <div class="wellness-strip">
-
-        <h2>🌿 Your wellness journey starts today</h2>
-
-        <p>
-            You don't need to change everything at once.
-            Choose one small healthy action and build from there.
-        </p>
-
-        <div class="wellness-pills">
-            <span class="wellness-pill">💧 Drink Water</span>
-            <span class="wellness-pill">🚶 Move More</span>
-            <span class="wellness-pill">🥗 Eat Balanced Meals</span>
-            <span class="wellness-pill">😴 Sleep Well</span>
-            <span class="wellness-pill">🧘 Take Breaks</span>
-        </div>
-
-    </div>
-
+</div>
 </section>
 
 <!-- ================= QUIZ ================= -->
 
 <section class="section card quiz-container" id="quiz">
 
-    <div class="section-heading">
-        <h2>🧠 Health Knowledge Quiz</h2>
-        <p>Test what you know about BMI and healthy habits.</p>
-    </div>
+<div class="section-heading">
+<h2>🧠 Health Knowledge Quiz</h2>
+<p>Test what you know about BMI and healthy habits.</p>
+</div>
 
-    <div id="quizArea">
+<div id="quizArea">
 
-        <div class="quiz-progress">
-            <div class="quiz-progress-bar" id="quizProgress"></div>
-        </div>
+<div class="quiz-progress">
+<div class="quiz-progress-bar" id="quizProgress"></div>
+</div>
 
-        <h3 class="quiz-question" id="quizQuestion">
-            Loading question...
-        </h3>
+<h3 class="quiz-question" id="quizQuestion">
+Loading question...
+</h3>
 
-        <div class="quiz-options" id="quizOptions"></div>
+<div class="quiz-options" id="quizOptions"></div>
 
-        <div class="quiz-feedback" id="quizFeedback"></div>
+<div class="quiz-feedback" id="quizFeedback"></div>
 
-        <div class="quiz-footer">
+<div class="quiz-footer">
 
-            <span class="quiz-score" id="quizCounter">
-                Question 1 of 5
-            </span>
+<span class="quiz-score" id="quizCounter">
+Question 1 of 5
+</span>
 
-            <button class="quiz-next" id="quizNext">
-                Next Question →
-            </button>
+<button class="quiz-next" id="quizNext">
+Next Question →
+</button>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
-    <div class="quiz-result" id="quizResult">
+<div class="quiz-result" id="quizResult">
 
-        <strong id="quizScore">0/5</strong>
+<strong id="quizScore">0/5</strong>
 
-        <h3>Quiz complete!</h3>
+<h3>Quiz complete!</h3>
 
-        <p id="quizMessage">
-            Nice work. Keep learning and building healthy habits.
-        </p>
+<p id="quizMessage">
+Nice work. Keep learning and building healthy habits.
+</p>
 
-        <br>
+<br>
 
-        <button class="calculate-btn" id="restartQuiz">
-            Try Again
-        </button>
+<button class="calculate-btn" id="restartQuiz">
+Try Again
+</button>
 
-    </div>
+</div>
 
 </section>
 
@@ -2012,62 +1866,62 @@ canvas{
 
 <section class="section" id="guide">
 
-    <div class="section-heading">
-        <h2>Understanding BMI</h2>
-        <p>Useful context for interpreting your result.</p>
-    </div>
+<div class="section-heading">
+<h2>Understanding BMI</h2>
+<p>Useful context for interpreting your result.</p>
+</div>
 
-    <div class="info-grid">
+<div class="info-grid">
 
-        <div class="info-box">
-            <h3>📐 How BMI works</h3>
-            <p>
-                Adult BMI is calculated using weight in kilograms
-                divided by height in metres squared.
-            </p>
-        </div>
+<div class="info-box">
+<h3>📐 How BMI works</h3>
+<p>
+Adult BMI is calculated using weight in kilograms
+divided by height in metres squared.
+</p>
+</div>
 
-        <div class="info-box">
-            <h3>📊 A screening measure</h3>
-            <p>
-                BMI does not directly measure body fat, muscle,
-                bone mass or fat distribution.
-            </p>
-        </div>
+<div class="info-box">
+<h3>📊 A screening measure</h3>
+<p>
+BMI does not directly measure body fat, muscle,
+bone mass or fat distribution.
+</p>
+</div>
 
-        <div class="info-box">
-            <h3>🧒 Children are different</h3>
-            <p>
-                Children and teenagers need age- and sex-specific
-                BMI-for-age interpretation rather than adult cutoffs.
-            </p>
-        </div>
+<div class="info-box">
+<h3>🧒 Children are different</h3>
+<p>
+Children and teenagers need age- and sex-specific
+BMI-for-age interpretation rather than adult cutoffs.
+</p>
+</div>
 
-        <div class="info-box">
-            <h3>❤️ Look at the bigger picture</h3>
-            <p>
-                Health can also involve activity, nutrition,
-                sleep, medical history and other measurements.
-            </p>
-        </div>
+<div class="info-box">
+<h3>❤️ Look at the bigger picture</h3>
+<p>
+Health can also involve activity, nutrition,
+sleep, medical history and other measurements.
+</p>
+</div>
 
-        <div class="info-box">
-            <h3>🏋️ Muscle matters</h3>
-            <p>
-                People with substantial muscle mass can have a
-                higher BMI without having the same body-fat level.
-            </p>
-        </div>
+<div class="info-box">
+<h3>🏋️ Muscle matters</h3>
+<p>
+People with substantial muscle mass can have a
+higher BMI without having the same body-fat level.
+</p>
+</div>
 
-        <div class="info-box">
-            <h3>🤰 Pregnancy</h3>
-            <p>
-                BMI should not be interpreted using the normal adult
-                framework during pregnancy.
-            </p>
-        </div>
+<div class="info-box">
+<h3>🤰 Pregnancy</h3>
+<p>
+BMI should not be interpreted using the normal adult
+framework during pregnancy.
+</p>
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -2075,14 +1929,14 @@ canvas{
 
 <section class="section disclaimer">
 
-    <strong>Important health information:</strong><br>
+<strong>Important health information:</strong><br>
 
-    FitFamilyHub provides general educational information.
-    BMI is a screening measure and is not a diagnosis.
-    For children and teenagers, BMI should be interpreted
-    using an appropriate age- and sex-specific growth reference.
-    For personal medical questions or concerns, speak with
-    a qualified healthcare professional.
+FitFamilyHub provides general educational information.
+BMI is a screening measure and is not a diagnosis.
+For children and teenagers, BMI should be interpreted
+using an appropriate age- and sex-specific growth reference.
+For personal medical questions or concerns, speak with
+a qualified healthcare professional.
 
 </section>
 
@@ -2090,84 +1944,84 @@ canvas{
 
 <section class="section card faq" id="faq">
 
-    <div class="section-heading">
-        <h2>Frequently Asked Questions</h2>
-        <p>Quick answers about this website and BMI.</p>
-    </div>
+<div class="section-heading">
+<h2>Frequently Asked Questions</h2>
+<p>Quick answers about this website and BMI.</p>
+</div>
 
-    <div class="faq-item">
+<div class="faq-item">
 
-        <button class="faq-question">
-            <span>What is BMI?</span>
-            <span class="faq-icon">+</span>
-        </button>
+<button class="faq-question">
+<span>What is BMI?</span>
+<span class="faq-icon">+</span>
+</button>
 
-        <div class="faq-answer">
-            BMI is a calculated measure using weight and height.
-            It is commonly used as a screening measure rather than
-            as a standalone diagnosis.
-        </div>
+<div class="faq-answer">
+BMI is a calculated measure using weight and height.
+It is commonly used as a screening measure rather than
+as a standalone diagnosis.
+</div>
 
-    </div>
+</div>
 
-    <div class="faq-item">
+<div class="faq-item">
 
-        <button class="faq-question">
-            <span>Can children use this calculator?</span>
-            <span class="faq-icon">+</span>
-        </button>
+<button class="faq-question">
+<span>Can children use this calculator?</span>
+<span class="faq-icon">+</span>
+</button>
 
-        <div class="faq-answer">
-            Yes. Select Child / Teen mode and enter the child's age,
-            sex, height and weight. Children and teenagers require
-            age- and sex-specific BMI-for-age interpretation rather
-            than adult BMI categories.
-        </div>
+<div class="faq-answer">
+Yes. Select Child / Teen mode and enter the child's age,
+sex, height and weight. Children and teenagers require
+age- and sex-specific BMI-for-age interpretation rather
+than adult BMI categories.
+</div>
 
-    </div>
+</div>
 
-    <div class="faq-item">
+<div class="faq-item">
 
-        <button class="faq-question">
-            <span>Does BMI measure body fat?</span>
-            <span class="faq-icon">+</span>
-        </button>
+<button class="faq-question">
+<span>Does BMI measure body fat?</span>
+<span class="faq-icon">+</span>
+</button>
 
-        <div class="faq-answer">
-            No. BMI is based only on height and weight and does not
-            directly measure body-fat percentage or muscle mass.
-        </div>
+<div class="faq-answer">
+No. BMI is based only on height and weight and does not
+directly measure body-fat percentage or muscle mass.
+</div>
 
-    </div>
+</div>
 
-    <div class="faq-item">
+<div class="faq-item">
 
-        <button class="faq-question">
-            <span>Where is my history stored?</span>
-            <span class="faq-icon">+</span>
-        </button>
+<button class="faq-question">
+<span>Where is my history stored?</span>
+<span class="faq-icon">+</span>
+</button>
 
-        <div class="faq-answer">
-            This version stores BMI history in your browser's
-            localStorage. The history is not uploaded by this page
-            to a FitFamilyHub server.
-        </div>
+<div class="faq-answer">
+This version stores BMI history in your browser's
+localStorage. The history is not uploaded by this page
+to a FitFamilyHub server.
+</div>
 
-    </div>
+</div>
 
-    <div class="faq-item">
+<div class="faq-item">
 
-        <button class="faq-question">
-            <span>Is this a medical diagnosis?</span>
-            <span class="faq-icon">+</span>
-        </button>
+<button class="faq-question">
+<span>Is this a medical diagnosis?</span>
+<span class="faq-icon">+</span>
+</button>
 
-        <div class="faq-answer">
-            No. This is an educational screening tool and should not
-            replace professional medical advice.
-        </div>
+<div class="faq-answer">
+No. This is an educational screening tool and should not
+replace professional medical advice.
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -2178,70 +2032,57 @@ canvas{
 
 <footer class="footer">
 
-    <div class="container footer-main">
+<div class="container footer-main">
 
-        <div class="footer-grid">
+<div class="footer-grid">
 
-            <div>
-                <h2>✚ FitFamilyHub</h2>
+<div>
+<h2>✚ FitFamilyHub</h2>
 
-                <p>
-                    Simple health tools and educational resources
-                    designed to make health information easier to understand.
-                </p>
-            </div>
+<p>
+Simple health tools and educational resources
+designed to make health information easier to understand.
+</p>
+</div>
 
-            <div>
-                <h3>Tools</h3>
+<div>
+<h3>Tools</h3>
+<ul>
+<li><a href="#calculator">BMI Calculator</a></li>
+<li><a href="#history">BMI History</a></li>
+<li><a href="#quiz">Health Quiz</a></li>
+</ul>
+</div>
 
-                <ul>
-                    <li><a href="#calculator">BMI Calculator</a></li>
-                    <li><a href="#history">BMI History</a></li>
-                    <li><a href="#quiz">Health Quiz</a></li>
-                </ul>
-            </div>
+<div>
+<h3>Learn</h3>
+<ul>
+<li><a href="#guide">BMI Guide</a></li>
+<li><a href="#health">Health Hub</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+</div>
 
-            <div>
-                <h3>Learn</h3>
+<div>
+<h3>Privacy</h3>
+<ul>
+<li><a href="#faq">Local Storage</a></li>
+<li><a href="#home">Back to Top</a></li>
+</ul>
+</div>
 
-                <ul>
-                    <li><a href="#guide">BMI Guide</a></li>
-                    <li><a href="#health">Health Hub</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </div>
+</div>
 
-            <div>
-                <h3>Privacy</h3>
+</div>
 
-                <ul>
-                    <li><a href="#faq">Local Storage</a></li>
-                    <li><a href="#home">Back to Top</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="developer">
-            Developed by <strong>M Singh</strong> ❤️
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        <div class="container">
-            © <span id="year"></span> FitFamilyHub ·
-            Educational health information · Not medical advice
-        </div>
-    </div>
+<div class="footer-bottom">
+<div class="container">
+© <span id="year"></span> FitFamilyHub ·
+Educational health information · Not medical advice
+</div>
+</div>
 
 </footer>
-
-<!-- BACK TO TOP -->
-
-<button class="top-btn" id="topBtn" aria-label="Back to top">
-    ↑
-</button>
 
 <div class="toast" id="toast"></div>
 
@@ -2257,19 +2098,9 @@ const $ = id => document.getElementById(id);
 let mode = "adult";
 let units = "metric";
 
-let history = [];
-
-try{
-    history = JSON.parse(
-        localStorage.getItem("fitfamilyhub_history") || "[]"
-    );
-
-    if(!Array.isArray(history)){
-        history = [];
-    }
-}catch{
-    history = [];
-}
+let history = JSON.parse(
+    localStorage.getItem("fitfamilyhub_history") || "[]"
+);
 
 /* ================= ELEMENTS ================= */
 
@@ -2315,8 +2146,7 @@ function applyTheme(){
 
     document.body.classList.toggle("dark",dark);
 
-    $("themeBtn").textContent =
-        dark ? "☀️" : "🌙";
+    $("themeBtn").textContent = dark ? "☀️" : "🌙";
 }
 
 $("themeBtn").addEventListener("click",()=>{
@@ -2328,9 +2158,6 @@ $("themeBtn").addEventListener("click",()=>{
         "fitfamilyhub_theme",
         dark ? "dark" : "light"
     );
-
-    $("themeBtn").textContent =
-        dark ? "☀️" : "🌙";
 
     if(history.length){
         drawChart();
@@ -2440,7 +2267,6 @@ function setUnits(newUnits){
     height.value = "";
     weight.value = "";
 
-    clearResult();
 }
 
 metricBtn.addEventListener(
@@ -2457,11 +2283,10 @@ imperialBtn.addEventListener(
 
 function calculateBMIValue(weightKg,heightCm){
 
-    const meters =
-        heightCm / 100;
+    const meters = heightCm / 100;
 
-    return weightKg /
-        (meters * meters);
+    return weightKg / (meters * meters);
+
 }
 
 /* ================= ADULT CATEGORY ================= */
@@ -2507,6 +2332,70 @@ function adultCategory(bmi){
         description:
         "Your BMI is within the adult obesity category. BMI is a screening measure and does not provide a complete assessment of individual health."
     };
+
+}
+
+/* ================= PEDIATRIC SCREENING ================= */
+
+/*
+   This deliberately avoids pretending to provide an exact
+   clinical percentile. A proper pediatric assessment uses
+   an age- and sex-specific growth reference.
+
+   The values below provide a visual educational estimate.
+*/
+
+function childEstimate(bmi,ageValue,sexValue){
+
+    /*
+       Broad screening boundaries are intentionally described
+       as estimates. They are NOT adult BMI cutoffs.
+    */
+
+    const ageFactor =
+        Math.min(
+            1.15,
+            Math.max(.85,1 + ((ageValue-10)*.008))
+        );
+
+    let low = 13.5 * ageFactor;
+    let high = 20.5 * ageFactor;
+
+    if(sexValue === "male"){
+        high += .3;
+    }else{
+        high -= .1;
+    }
+
+    if(bmi < low){
+
+        return {
+            name:"Below expected range",
+            className:"pediatric",
+            description:
+            "This BMI appears below a broad age-adjusted screening range. A pediatric growth reference should be used for an exact BMI-for-age interpretation."
+        };
+
+    }
+
+    if(bmi < high){
+
+        return {
+            name:"Within broad range",
+            className:"pediatric",
+            description:
+            "This BMI falls within a broad age-adjusted screening range. A child's growth pattern over time is important when interpreting BMI."
+        };
+
+    }
+
+    return {
+        name:"Above expected range",
+        className:"pediatric",
+        description:
+        "This BMI appears above a broad age-adjusted screening range. A pediatric growth reference should be used for an exact BMI-for-age interpretation."
+    };
+
 }
 
 /* ================= CALCULATE ================= */
@@ -2515,17 +2404,10 @@ function calculate(){
 
     error.classList.remove("show");
 
-    const ageValue =
-        Number(age.value);
-
-    const sexValue =
-        sex.value;
-
-    let weightValue =
-        Number(weight.value);
-
-    let heightValue =
-        Number(height.value);
+    const ageValue = Number(age.value);
+    const sexValue = sex.value;
+    let weightValue = Number(weight.value);
+    let heightValue = Number(height.value);
 
     if(
         !ageValue ||
@@ -2580,6 +2462,7 @@ function calculate(){
 
         heightCm =
             heightValue * 2.54;
+
     }
 
     if(
@@ -2589,26 +2472,6 @@ function calculate(){
 
         showError(
             "Please enter valid height and weight."
-        );
-
-        return;
-    }
-
-    /* Reasonable input validation */
-
-    if(heightCm < 50 || heightCm > 250){
-
-        showError(
-            "Please enter a realistic height."
-        );
-
-        return;
-    }
-
-    if(weightKg < 2 || weightKg > 500){
-
-        showError(
-            "Please enter a realistic weight."
         );
 
         return;
@@ -2632,12 +2495,19 @@ function calculate(){
 
         showAdultResult(
             bmi,
+            rounded,
             heightCm
         );
 
     }else{
 
-        showChildResult();
+        showChildResult(
+            bmi,
+            rounded,
+            ageValue,
+            sexValue
+        );
+
     }
 
     saveHistory({
@@ -2647,12 +2517,14 @@ function calculate(){
         bmi:rounded,
         mode:mode
     });
+
 }
 
 /* ================= ADULT RESULT ================= */
 
 function showAdultResult(
     bmi,
+    rounded,
     heightCm
 ){
 
@@ -2679,11 +2551,6 @@ function showAdultResult(
     resultDescription.textContent =
         info.description;
 
-    /*
-        Gauge maps BMI 10–50 to 0–100%.
-        This is visual only.
-    */
-
     let position =
         ((bmi - 10) / 40) * 100;
 
@@ -2696,16 +2563,13 @@ function showAdultResult(
     marker.style.left =
         position + "%";
 
-    const heightMeters =
-        heightCm / 100;
-
     const healthy =
         18.5 *
-        Math.pow(heightMeters,2);
+        Math.pow(heightCm/100,2);
 
     const healthyMax =
         24.9 *
-        Math.pow(heightMeters,2);
+        Math.pow(heightCm/100,2);
 
     if(units === "metric"){
 
@@ -2722,15 +2586,29 @@ function showAdultResult(
             " – " +
             (healthyMax*2.20462).toFixed(1) +
             " lb";
+
     }
+
 }
 
 /* ================= CHILD RESULT ================= */
 
-function showChildResult(){
+function showChildResult(
+    bmi,
+    rounded,
+    ageValue,
+    sexValue
+){
+
+    const info =
+        childEstimate(
+            bmi,
+            ageValue,
+            sexValue
+        );
 
     category.textContent =
-        "BMI calculated";
+        info.name;
 
     category.className =
         "category pediatric";
@@ -2742,65 +2620,55 @@ function showChildResult(){
         "none";
 
     resultDescription.textContent =
-        "For children and teenagers, BMI must be interpreted using age- and sex-specific BMI-for-age growth charts.";
+        info.description;
 
     childNotice.innerHTML = `
-        <strong>🧒 Child / Teen interpretation</strong>
+        <strong>Child / teen interpretation</strong><br><br>
+        BMI for children and teenagers should be interpreted
+        using an age- and sex-specific growth reference.
+        This result is an educational screening estimate,
+        not a clinical BMI-for-age percentile.
         <br><br>
-        The BMI number above is mathematically calculated from
-        height and weight, but adult BMI categories should not
-        be used for children and teenagers.
-        <br><br>
-        A proper BMI-for-age percentile requires an appropriate
-        age- and sex-specific pediatric growth reference.
-        <br><br>
-        For an accurate interpretation, discuss the result with
+        For an exact percentile assessment, use an appropriate
+        pediatric growth reference or discuss the result with
         a healthcare professional.
     `;
 
-    childNotice.classList.add(
-        "show"
-    );
+    childNotice.classList.add("show");
+
 }
 
 /* ================= ERROR ================= */
 
 function showError(message){
 
-    error.textContent =
-        message;
+    error.textContent = message;
+    error.classList.add("show");
 
-    error.classList.add(
-        "show"
-    );
 }
 
 /* ================= RESET ================= */
 
 function clearResult(){
 
-    result.classList.remove(
-        "show"
-    );
+    result.classList.remove("show");
 
-    error.classList.remove(
-        "show"
-    );
+    error.classList.remove("show");
 
-    marker.style.left =
-        "0%";
+    marker.style.left = "0%";
+
 }
 
-$("resetBtn").addEventListener(
-    "click",
-    ()=>{
-        age.value = "";
-        sex.value = "";
-        height.value = "";
-        weight.value = "";
-        clearResult();
-    }
-);
+$("resetBtn").addEventListener("click",()=>{
+
+    age.value = "";
+    sex.value = "";
+    height.value = "";
+    weight.value = "";
+
+    clearResult();
+
+});
 
 /* ================= ENTER KEY ================= */
 
@@ -2817,8 +2685,10 @@ $("resetBtn").addEventListener(
             if(event.key === "Enter"){
                 calculate();
             }
+
         }
     );
+
 });
 
 $("calculateBtn").addEventListener(
@@ -2835,20 +2705,17 @@ function saveHistory(entry){
     history =
         history.slice(0,20);
 
-    try{
-        localStorage.setItem(
-            "fitfamilyhub_history",
-            JSON.stringify(history)
-        );
-    }catch{
-        /* Storage unavailable */
-    }
+    localStorage.setItem(
+        "fitfamilyhub_history",
+        JSON.stringify(history)
+    );
 
     renderHistory();
 
     showToast(
         "BMI calculation saved locally."
     );
+
 }
 
 function renderHistory(){
@@ -2874,6 +2741,7 @@ function renderHistory(){
             "—";
 
         return;
+
     }
 
     $("emptyHistory").style.display =
@@ -2912,9 +2780,9 @@ function renderHistory(){
             return `
                 <tr>
                     <td>${escapeHTML(item.date)}</td>
-                    <td>${Number(item.age)}</td>
+                    <td>${item.age}</td>
                     <td>${sex}</td>
-                    <td><strong>${Number(item.bmi).toFixed(1)}</strong></td>
+                    <td><strong>${item.bmi}</strong></td>
                     <td>${escapeHTML(cat)}</td>
                 </tr>
             `;
@@ -2922,6 +2790,7 @@ function renderHistory(){
         }).join("");
 
     drawChart();
+
 }
 
 function escapeHTML(value){
@@ -2932,6 +2801,7 @@ function escapeHTML(value){
         .replace(/>/g,"&gt;")
         .replace(/"/g,"&quot;")
         .replace(/'/g,"&#039;");
+
 }
 
 /* ================= CHART ================= */
@@ -2986,25 +2856,12 @@ function drawChart(){
         .slice()
         .reverse();
 
-    const styles =
-        getComputedStyle(
-            document.body
-        );
-
-    const muted =
-        styles.getPropertyValue(
-            "--muted"
-        );
-
-    const border =
-        styles.getPropertyValue(
-            "--border"
-        );
-
     if(data.length === 0){
 
         ctx.fillStyle =
-            muted;
+            getComputedStyle(
+                document.body
+            ).getPropertyValue("--muted");
 
         ctx.textAlign =
             "center";
@@ -3041,19 +2898,24 @@ function drawChart(){
     const minY = 10;
     const maxY = 40;
 
+    const muted =
+        getComputedStyle(
+            document.body
+        ).getPropertyValue("--muted");
+
+    const border =
+        getComputedStyle(
+            document.body
+        ).getPropertyValue("--border");
+
     ctx.font =
         "10px Inter";
 
     ctx.textAlign =
         "right";
 
-    [
-        10,
-        18.5,
-        25,
-        30,
-        40
-    ].forEach(value=>{
+    [10,18.5,25,30,40]
+    .forEach(value=>{
 
         const y =
             padding.top +
@@ -3089,13 +2951,11 @@ function drawChart(){
             padding.left-7,
             y+4
         );
+
     });
 
     const points =
         data.map((item,index)=>{
-
-            const bmi =
-                Number(item.bmi);
 
             const x =
                 data.length === 1
@@ -3108,14 +2968,12 @@ function drawChart(){
             const y =
                 padding.top +
                 chartHeight -
-                ((bmi-minY) /
+                ((item.bmi-minY) /
                 (maxY-minY)) *
                 chartHeight;
 
-            return {
-                x,
-                y
-            };
+            return {x,y};
+
         });
 
     ctx.beginPath();
@@ -3123,19 +2981,17 @@ function drawChart(){
     points.forEach((point,index)=>{
 
         if(index === 0){
-
             ctx.moveTo(
                 point.x,
                 point.y
             );
-
         }else{
-
             ctx.lineTo(
                 point.x,
                 point.y
             );
         }
+
     });
 
     ctx.strokeStyle =
@@ -3167,7 +3023,9 @@ function drawChart(){
             "#635bff";
 
         ctx.fill();
+
     });
+
 }
 
 $("clearHistory").addEventListener(
@@ -3188,17 +3046,16 @@ $("clearHistory").addEventListener(
 
         history = [];
 
-        try{
-            localStorage.removeItem(
-                "fitfamilyhub_history"
-            );
-        }catch{}
+        localStorage.removeItem(
+            "fitfamilyhub_history"
+        );
 
         renderHistory();
 
         showToast(
             "BMI history cleared."
         );
+
     }
 );
 
@@ -3206,90 +3063,75 @@ $("clearHistory").addEventListener(
 
 const quizQuestions = [
 
-    {
-        question:
-        "What does BMI stand for?",
+{
+    question:
+    "What does BMI stand for?",
+    options:[
+        "Body Mass Index",
+        "Body Muscle Indicator",
+        "Basic Medical Index",
+        "Body Measurement Information"
+    ],
+    answer:0,
+    explanation:
+    "BMI stands for Body Mass Index."
+},
 
-        options:[
-            "Body Mass Index",
-            "Body Muscle Indicator",
-            "Basic Medical Index",
-            "Body Measurement Information"
-        ],
+{
+    question:
+    "Why are children's BMI results interpreted differently from adults?",
+    options:[
+        "Children do not have weight",
+        "Children are still growing",
+        "BMI cannot be calculated for children",
+        "Height does not matter"
+    ],
+    answer:1,
+    explanation:
+    "Children and teenagers are growing, so BMI is interpreted relative to age and sex."
+},
 
-        answer:0,
+{
+    question:
+    "Does BMI directly measure body fat?",
+    options:[
+        "Yes",
+        "No",
+        "Only in athletes",
+        "Only after age 30"
+    ],
+    answer:1,
+    explanation:
+    "BMI uses height and weight and does not directly measure body-fat percentage."
+},
 
-        explanation:
-        "BMI stands for Body Mass Index."
-    },
+{
+    question:
+    "Which habit can support general health?",
+    options:[
+        "Regular physical activity",
+        "Skipping all meals",
+        "Avoiding water",
+        "Sleeping as little as possible"
+    ],
+    answer:0,
+    explanation:
+    "Regular physical activity is one component of a healthy lifestyle."
+},
 
-    {
-        question:
-        "Why are children's BMI results interpreted differently from adults?",
-
-        options:[
-            "Children do not have weight",
-            "Children are still growing",
-            "BMI cannot be calculated for children",
-            "Height does not matter"
-        ],
-
-        answer:1,
-
-        explanation:
-        "Children and teenagers are growing, so BMI is interpreted relative to age and sex."
-    },
-
-    {
-        question:
-        "Does BMI directly measure body fat?",
-
-        options:[
-            "Yes",
-            "No",
-            "Only in athletes",
-            "Only after age 30"
-        ],
-
-        answer:1,
-
-        explanation:
-        "BMI uses height and weight and does not directly measure body-fat percentage."
-    },
-
-    {
-        question:
-        "Which habit can support general health?",
-
-        options:[
-            "Regular physical activity",
-            "Skipping all meals",
-            "Avoiding water",
-            "Sleeping as little as possible"
-        ],
-
-        answer:0,
-
-        explanation:
-        "Regular physical activity is one component of a healthy lifestyle."
-    },
-
-    {
-        question:
-        "What should you do if you are concerned about a health result?",
-
-        options:[
-            "Ignore it",
-            "Use social media as a diagnosis",
-            "Discuss it with a healthcare professional",
-            "Stop eating"
-        ],
-
-        answer:2,
-
-        explanation:
-        "A healthcare professional can consider your broader health information."
-    }
+{
+    question:
+    "What should you do if you are concerned about a health result?",
+    options:[
+        "Ignore it",
+        "Use social media as a diagnosis",
+        "Discuss it with a healthcare professional",
+        "Stop eating"
+    ],
+    answer:2,
+    explanation:
+    "A healthcare professional can consider your broader health information."
+}
 
 ];
 
@@ -3342,7 +3184,9 @@ function renderQuiz(){
             "click",
             ()=>answerQuiz(button)
         );
+
     });
+
 }
 
 function answerQuiz(button){
@@ -3372,11 +3216,11 @@ function answerQuiz(button){
             Number(btn.dataset.index);
 
         if(index === question.answer){
-
             btn.classList.add(
                 "correct"
             );
         }
+
     });
 
     if(selected === question.answer){
@@ -3400,10 +3244,12 @@ function answerQuiz(button){
         $("quizFeedback").textContent =
             "Not quite. " +
             question.explanation;
+
     }
 
     $("quizNext").style.display =
         "block";
+
 }
 
 $("quizNext").addEventListener(
@@ -3422,7 +3268,9 @@ $("quizNext").addEventListener(
         }else{
 
             renderQuiz();
+
         }
+
     }
 );
 
@@ -3451,7 +3299,9 @@ function finishQuiz(){
 
         $("quizMessage").textContent =
             "Nice attempt. Keep exploring the Health Hub to learn more.";
+
     }
+
 }
 
 $("restartQuiz").addEventListener(
@@ -3468,6 +3318,7 @@ $("restartQuiz").addEventListener(
             "none";
 
         renderQuiz();
+
     }
 );
 
@@ -3499,8 +3350,10 @@ document
                 item.classList.contains("open")
                 ? "−"
                 : "+";
+
         }
     );
+
 });
 
 /* ================= TOAST ================= */
@@ -3532,42 +3385,8 @@ function showToast(message){
             },
             2500
         );
+
 }
-
-/* ================= BACK TO TOP ================= */
-
-const topBtn =
-    $("topBtn");
-
-window.addEventListener(
-    "scroll",
-    ()=>{
-
-        if(window.scrollY > 500){
-
-            topBtn.classList.add(
-                "show"
-            );
-
-        }else{
-
-            topBtn.classList.remove(
-                "show"
-            );
-        }
-    }
-);
-
-topBtn.addEventListener(
-    "click",
-    ()=>{
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
-    }
-);
 
 /* ================= RESIZE ================= */
 
